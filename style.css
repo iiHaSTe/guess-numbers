@@ -1,0 +1,220 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  min-height: 100vh;
+  font-size: 15pt;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #383A4B;
+  padding: 0 .9em;
+}
+.title-de-jeux {
+  font-family: 'Neonderthaw', cursive;
+  position: absolute;
+  top: 2em;
+  color: #DCAD42;
+  text-shadow: 0 0 3px #FFC94E;
+  font-size: 2em;
+  font-weight: 500;
+}
+@media (min-width: 600px){
+  body {
+    font-size: 23pt;
+  }
+  .title-de-jeux {
+    top: 4em;
+    font-size: 3em;
+  }
+}
+
+
+.container {
+  position: relative;
+  color: white;
+  background-color: #111;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #000;
+  margin: 5em .1em;
+}
+.score {
+  position: absolute;
+  top: -1.4em;
+  left: 50%;
+  transform: translate(-50%);
+  width: 5em;
+  height: 1.4em;
+  background-color: #1D223A;
+  border-radius: 10px 10px 0px 0px;
+  border-bottom: none;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  z-index: 999;
+  font-family: 'Supermercado One', cursive;
+}
+.score::after {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  top: -2em;
+  left: 50%;
+  transform: translate(-50%);
+  width: 1.5em;
+  height: 6em;
+  background-image: linear-gradient(#88FF0C, #951F62);
+  animation: gg 2s infinite linear;
+  
+}
+.score::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: .1em;
+  left: 50%;
+  transform: translate(-50%);
+  width: 4.6em;
+  height: 1.2em;
+  background-color: #1D223A;
+  border-radius: 10px 10px 0px 0px;
+}
+@keyframes gg{
+  0% {
+    transform: translate(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%) rotate(360deg);
+  }
+}
+
+.container p.title {
+  font-size: 0.8em;
+  font-weight: 700;
+  color: #B7B8C4;
+  line-height: 20px;
+  margin: 1.7em 1.7em 0em 1.7em;
+}
+.container p.title::first-line {
+  font-family: 'Supermercado One', cursive;
+  color: #FF481C;
+  letter-spacing: 2px;
+}
+.container p.title color:first-child {
+  color: #69FF2F;
+}
+.container p.title color {
+  color: #F4FF52;
+}
+.container p.title span {
+  background-color: #414141;
+  color: #30FF17;
+  padding: .5px;
+  border-radius: .0005px;
+}
+.container .inputs {
+  margin: 1.2em 0px;
+  display: grid;
+  grid-template-areas: 
+    "input input"
+    "btn btn"
+  ;
+  grid-gap: .4em;
+  padding: 0 1em;
+}
+#in-number {
+  grid-area: input;
+  outline: none;
+  padding: .4em .6em;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  background-color: transparent;
+  color: white;
+  font-size: .8em;
+  font-family: 'Open Sans', sans-serif;
+}
+#btn {
+  grid-area: btn;
+  border-radius: 5px;
+  font-size: .5em;
+  font-weight: 600;
+  padding: 3px;
+  transition: .5s;
+  font-size: .8em;
+}
+.output {
+  width: 100%;
+  height: 0px;
+  text-align: center;
+  color: white;
+  text-shadow: 0 1 5px black;
+  font-family: 'Supermercado One', cursive;
+  font-size: 1.5em;
+  letter-spacing: .1em;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.win {
+  background-color: #2DFF1E;
+  box-shadow: 0 0 5px #2DFF1E;
+  transition: 1s;
+}
+.lose {
+  background-color: #E72F2F;
+  box-shadow: 0 0 5px #E72F2F;
+  transition: 1s;
+}
+.warning {
+  background-color: #FFCC20;
+  box-shadow: 0 0 5px #FFD031;
+  font-size: 1em;
+  transition: 1s;
+}
+
+
+.button-style {
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+.button-style:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+.button-style:hover {
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+.button-style:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
+}
